@@ -1,202 +1,184 @@
 <!-- ============================================================
-     YOUR PERSONAL LANDING PAGE
-     Beginner tip: anything between "quotes" or after a 👇 emoji
-     is yours to change. Save, then refresh your browser to see it.
+     HUSSAIN MUNTAHA — PERSONAL SITE  (sleek edition)
+     Beginner tip: anything after a 👇 emoji is yours to change.
+     Save → Commit → refresh your live site to see updates.
      ============================================================ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hussain Muntaha</title>
 
-  <!-- 👇 CHANGE: the browser tab title -->
-  <title>Your Name — Portfolio</title>
-
-  <!-- Fonts (loaded from Google — works automatically once online) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --bg:       #14121F;  /* deep indigo-plum */
-      --surface:  #1E1B2E;  /* card background  */
-      --border:   #2E2A40;  /* hairline borders */
-      --text:     #F5F0E8;  /* warm off-white   */
-      --muted:    #9B93B0;  /* secondary text   */
-      --coral:    #FF6B5C;  /* accent 1         */
-      --amber:    #FFC857;  /* accent 2         */
-      --grad:     linear-gradient(105deg, var(--coral), var(--amber));
+      --bg:      #0A0A0C;
+      --surface: #121215;
+      --border:  #222227;
+      --text:    #ECECEE;
+      --muted:   #82828C;
+      --faint:   #5A5A63;
+      --coral:   #FF6B5C;
+      --amber:   #FFC857;
+      --grad:    linear-gradient(100deg, var(--coral), var(--amber));
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
       background: var(--bg);
       color: var(--text);
       font-family: "Inter", system-ui, sans-serif;
-      line-height: 1.6;
-      overflow-x: hidden;
+      line-height: 1.65;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
-    /* The cursor-following glow lives here, behind everything */
-    .glow {
-      position: fixed;
-      top: 0; left: 0;
-      width: 600px; height: 600px;
-      margin: -300px 0 0 -300px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,107,92,0.18), transparent 60%);
-      pointer-events: none;
-      z-index: 0;
-      transition: transform 0.18s ease-out;
+    .progress {
+      position: fixed; top: 0; left: 0; height: 2px; width: 0%;
+      background: var(--grad); z-index: 50;
+      transition: width 0.1s linear;
     }
 
-    .wrap { max-width: 980px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 1; }
+    .aura {
+      position: fixed; top: -200px; right: -150px;
+      width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,107,92,0.10), transparent 65%);
+      pointer-events: none; z-index: 0;
+    }
 
-    /* ---------- Top bar ---------- */
+    .wrap { max-width: 760px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 1; }
+
+    .mono {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted);
+    }
+
     header {
       display: flex; align-items: center; justify-content: space-between;
-      padding: 30px 0;
+      padding: 34px 0;
     }
     .mark {
-      font-family: "Bricolage Grotesque", sans-serif;
-      font-weight: 800; font-size: 1.25rem; letter-spacing: -0.02em;
+      font-family: "Space Grotesk", sans-serif; font-weight: 500;
+      font-size: 1.05rem; letter-spacing: 0.04em;
     }
-    nav { display: flex; gap: 28px; }
+    nav { display: flex; gap: 30px; }
     nav a {
-      color: var(--muted); text-decoration: none; font-size: 0.95rem;
-      font-weight: 500; transition: color 0.2s;
+      font-family: "JetBrains Mono", monospace; font-size: 0.78rem;
+      letter-spacing: 0.05em; color: var(--muted); text-decoration: none;
+      transition: color 0.2s;
     }
     nav a:hover, nav a:focus-visible { color: var(--text); }
 
-    /* ---------- Hero ---------- */
-    .hero { padding: 90px 0 110px; }
-    .eyebrow {
-      color: var(--muted); font-size: 1rem; letter-spacing: 0.02em;
-      margin-bottom: 14px;
+    .hero { padding: 96px 0 120px; }
+    .status {
+      display: inline-flex; align-items: center; gap: 9px;
+      margin-bottom: 30px;
+    }
+    .dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--amber); box-shadow: 0 0 10px var(--amber);
     }
     .hero h1 {
-      font-family: "Bricolage Grotesque", sans-serif;
-      font-weight: 800;
-      font-size: clamp(3rem, 11vw, 6.5rem);
-      line-height: 0.95; letter-spacing: -0.03em;
-      margin-bottom: 22px;
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 300;
+      font-size: clamp(3.2rem, 11vw, 6.2rem);
+      line-height: 1.02; letter-spacing: -0.035em;
+      margin-bottom: 26px;
     }
     .hero h1 .accent {
+      font-weight: 500;
       background: var(--grad);
       -webkit-background-clip: text; background-clip: text;
       -webkit-text-fill-color: transparent; color: transparent;
     }
     .tagline {
-      font-size: clamp(1.05rem, 2.4vw, 1.4rem);
-      color: var(--muted); max-width: 520px; margin-bottom: 38px;
+      font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+      color: var(--muted); max-width: 460px; margin-bottom: 42px;
     }
+    .actions { display: flex; gap: 26px; align-items: center; flex-wrap: wrap; }
+    .link-arrow {
+      font-family: "Space Grotesk", sans-serif; font-weight: 500; font-size: 1rem;
+      color: var(--text); text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px;
+      transition: gap 0.2s, color 0.2s;
+    }
+    .link-arrow .arr { transition: transform 0.2s; color: var(--coral); }
+    .link-arrow:hover .arr, .link-arrow:focus-visible .arr { transform: translateX(4px); }
+    .link-ghost { color: var(--muted); }
+    .link-ghost:hover, .link-ghost:focus-visible { color: var(--text); }
 
-    .buttons { display: flex; gap: 14px; flex-wrap: wrap; }
-    .btn {
-      display: inline-block; padding: 14px 26px; border-radius: 999px;
-      font-weight: 600; font-size: 0.98rem; text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
-    }
-    .btn-primary {
-      background: var(--grad); color: #14121F;
-      box-shadow: 0 8px 30px rgba(255,107,92,0.25);
-    }
-    .btn-primary:hover, .btn-primary:focus-visible {
-      transform: translateY(-2px); box-shadow: 0 12px 36px rgba(255,107,92,0.35);
-    }
-    .btn-ghost {
-      border: 1px solid var(--border); color: var(--text);
-    }
-    .btn-ghost:hover, .btn-ghost:focus-visible {
-      border-color: var(--muted); transform: translateY(-2px);
-    }
-
-    /* ---------- Section shared ---------- */
-    .section { padding: 70px 0; border-top: 1px solid var(--border); }
-    .label {
-      font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--coral); font-weight: 600; margin-bottom: 18px;
-    }
+    .section { padding: 64px 0; border-top: 1px solid var(--border); }
+    .section-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 32px; }
+    .section-head .idx { color: var(--coral); }
     .section h2 {
-      font-family: "Bricolage Grotesque", sans-serif;
-      font-weight: 600; font-size: clamp(1.8rem, 4vw, 2.6rem);
-      letter-spacing: -0.02em; margin-bottom: 22px;
+      font-family: "Space Grotesk", sans-serif; font-weight: 400;
+      font-size: clamp(1.7rem, 4vw, 2.4rem); letter-spacing: -0.02em;
     }
-    .section p.lead { color: var(--muted); max-width: 620px; font-size: 1.08rem; }
+    .lead { color: var(--muted); font-size: 1.1rem; max-width: 580px; }
+    .lead strong { color: var(--text); font-weight: 500; }
 
-    /* ---------- Projects ---------- */
-    .grid {
-      display: grid; gap: 18px; margin-top: 14px;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    .projects { display: flex; flex-direction: column; }
+    .project {
+      display: grid; grid-template-columns: 60px 1fr auto; gap: 22px; align-items: start;
+      padding: 26px 0; border-bottom: 1px solid var(--border);
+      text-decoration: none; color: var(--text);
+      transition: padding-left 0.25s;
     }
-    .card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 18px; padding: 26px; text-decoration: none;
-      color: var(--text); transition: transform 0.25s, border-color 0.25s;
-      display: block;
-    }
-    .card:hover, .card:focus-visible {
-      transform: translateY(-6px); border-color: var(--coral);
-    }
-    .card .num {
-      font-family: "Bricolage Grotesque", sans-serif; font-weight: 800;
-      font-size: 1.1rem; color: var(--amber); margin-bottom: 14px;
-    }
-    .card h3 {
-      font-family: "Bricolage Grotesque", sans-serif; font-weight: 600;
-      font-size: 1.25rem; margin-bottom: 8px;
-    }
-    .card p { color: var(--muted); font-size: 0.96rem; }
+    .project:hover, .project:focus-visible { padding-left: 8px; }
+    .project:last-child { border-bottom: none; }
+    .project .num { font-family: "JetBrains Mono", monospace; color: var(--faint); font-size: 0.9rem; padding-top: 4px; }
+    .project h3 { font-family: "Space Grotesk", sans-serif; font-weight: 500; font-size: 1.22rem; margin-bottom: 4px; }
+    .project p { color: var(--muted); font-size: 0.97rem; }
+    .project .go { color: var(--faint); font-size: 1.3rem; padding-top: 2px; transition: color 0.2s, transform 0.2s; }
+    .project:hover .go, .project:focus-visible .go { color: var(--coral); transform: translateX(3px); }
 
-    /* ---------- Contact ---------- */
-    .socials { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 26px; }
+    .socials { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
     .socials a {
-      padding: 12px 22px; border: 1px solid var(--border); border-radius: 999px;
-      color: var(--text); text-decoration: none; font-weight: 500; font-size: 0.95rem;
-      transition: border-color 0.2s, transform 0.2s;
+      font-family: "Space Grotesk", sans-serif; font-weight: 500; font-size: 0.95rem;
+      padding: 11px 22px; border: 1px solid var(--border); border-radius: 10px;
+      color: var(--text); text-decoration: none;
+      transition: border-color 0.2s, background 0.2s, transform 0.2s;
     }
     .socials a:hover, .socials a:focus-visible {
-      border-color: var(--coral); transform: translateY(-2px);
+      border-color: var(--coral); background: rgba(255,107,92,0.06); transform: translateY(-2px);
     }
 
-    footer {
-      padding: 50px 0; color: var(--muted); font-size: 0.9rem;
-      border-top: 1px solid var(--border); text-align: center;
-    }
+    footer { padding: 54px 0 70px; border-top: 1px solid var(--border); margin-top: 64px; }
+    footer .mono { color: var(--faint); }
 
-    /* ---------- Scroll reveal ---------- */
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.in { opacity: 1; transform: none; }
 
-    /* Respect users who prefer less motion */
     @media (prefers-reduced-motion: reduce) {
       * { scroll-behavior: auto; }
-      .glow { display: none; }
+      .aura { display: none; }
       .reveal { opacity: 1; transform: none; transition: none; }
-      .btn, .card, .socials a { transition: none; }
+      .project, .link-arrow .arr, .project .go, .socials a { transition: none; }
     }
-
-    :focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; border-radius: 4px; }
+    :focus-visible { outline: 2px solid var(--amber); outline-offset: 4px; border-radius: 4px; }
 
     @media (max-width: 560px) {
       nav { gap: 18px; }
-      .hero { padding: 60px 0 80px; }
+      .hero { padding: 64px 0 90px; }
+      .project { grid-template-columns: 40px 1fr auto; gap: 14px; }
     }
   </style>
 </head>
 
 <body>
-  <div class="glow" id="glow"></div>
+  <div class="progress" id="progress"></div>
+  <div class="aura"></div>
 
   <div class="wrap">
     <header>
-      <!-- 👇 CHANGE: your initials or a short logo -->
-      <div class="mark">YN.</div>
+      <div class="mark">HM</div>
       <nav>
         <a href="#about">About</a>
         <a href="#work">Work</a>
@@ -206,61 +188,71 @@
 
     <!-- ===================== HERO ===================== -->
     <section class="hero">
-      <p class="eyebrow">Hello,my name is</p>
+      <div class="status">
+        <span class="dot"></span>
+        <!-- 👇 CHANGE: your short status line -->
+        <span class="mono">2nd-year AI student</span>
+      </div>
       <!-- 👇 CHANGE: your name. Keep one word in <span class="accent"> for the gradient -->
-      <h1>Hussain<span class="accent">Muntaha</span></h1>
-      <!-- 👇 CHANGE: a one-line description of who you are -->
-      <p class="tagline"> its my first time trying github.</p>
-      <div class="buttons">
-        <a class="btn btn-primary" href="#work">I will soon show my work</a>
-        <!-- 👇 CHANGE: link to your GitHub profile -->
-        <a class="btn btn-ghost" href="https://github.com/" target="_blank" rel="noopener">My GitHub</a>
+      <h1>Hussain <span class="accent">Muntaha</span></h1>
+      <!-- 👇 CHANGE: your one-line intro -->
+      <p class="tagline">It's my first time trying GitHub — and this is where it begins.</p>
+      <div class="actions">
+        <a class="link-arrow" href="#work">See my work <span class="arr">&rarr;</span></a>
+        <!-- 👇 CHANGE: your GitHub profile -->
+        <a class="link-arrow link-ghost" href="https://github.com/husainn-7" target="_blank" rel="noopener">GitHub</a>
       </div>
     </section>
 
     <!-- ===================== ABOUT ===================== -->
     <section class="section reveal" id="about">
-      <p class="label">Something about me</p>
-      <h2>I am a 2nd-Year Aritificial Intelligence student at Asia Pacific University, Malaysia.</h2>
-      <!-- 👇 CHANGE: write a few sentences about yourself -->
-      <p class="lead">I started my coding journey two years ago with python.
-           Honestly, I didnt understand anything in the beginning
-           but once you get a grip things start to get a grip,
-           things automatically fall into place.</p>
+      <div class="section-head"><span class="mono idx">01</span><span class="mono">About</span></div>
+      <h2 style="margin-bottom:20px;">2nd-year Artificial Intelligence student at Asia Pacific University, Malaysia.</h2>
+      <!-- 👇 CHANGE: your story -->
+      <p class="lead">I started my coding journey two years ago with <strong>Python</strong>.
+        Honestly, I didn't understand much at the beginning &mdash; but once you get a grip,
+        things start to fall into place.</p>
     </section>
 
     <!-- ===================== WORK ===================== -->
     <section class="section reveal" id="work">
-      <p class="label">Work</p>
-      <h2>Things I've built</h2>
-      <div class="grid">
-        <!-- 👇 CHANGE each card: number, title, description, and link -->
-        <a class="card" href="#" target="_blank" rel="noopener">
-          <div class="num">01</div>
-          <h3>This Website</h3>
-          <p>Since this is my first project, I wanted to make
-              it a little bit simple and easy to understand.</p>
+      <div class="section-head"><span class="mono idx">02</span><span class="mono">Work</span></div>
+      <div class="projects">
+        <!-- 👇 CHANGE each project: title, description, and the href link -->
+        <a class="project" href="https://github.com/husainn-7/husainn-7.github.io" target="_blank" rel="noopener">
+          <span class="num">001</span>
+          <span>
+            <h3>This Website</h3>
+            <p>Since this is my first project, I kept it simple and easy to understand.</p>
+          </span>
+          <span class="go">&rarr;</span>
         </a>
-        <a class="card" href="#" target="_blank" rel="noopener">
-          <div class="num">02</div>
-          <h3>This is coming soon</h3>
-          <p>Currently, I am working on an idea so all I can say is that "COOKING".</p>
+        <a class="project" href="#" rel="noopener">
+          <span class="num">002</span>
+          <span>
+            <h3>Coming soon</h3>
+            <p>Currently working on an idea &mdash; all I can say for now is that it's cooking. 🍳</p>
+          </span>
+          <span class="go">&rarr;</span>
         </a>
-        <a class="card" href="#" target="_blank" rel="noopener">
-          <div class="num">03</div>
-          <h3>Coming Soon</h3>
-          <p>Room to grow. Every project you add makes this page more "you".</p>
+        <a class="project" href="#" rel="noopener">
+          <span class="num">003</span>
+          <span>
+            <h3>Room to grow</h3>
+            <p>Every project I add makes this page a little more me.</p>
+          </span>
+          <span class="go">&rarr;</span>
         </a>
       </div>
     </section>
 
     <!-- ===================== CONTACT ===================== -->
     <section class="section reveal" id="contact">
-      <p class="label">Contact</p>
-      <h2>Let's connect</h2>
-      <p class="lead">Find me around the web — I'd love to hear from you.</p>
+      <div class="section-head"><span class="mono idx">03</span><span class="mono">Contact</span></div>
+      <h2 style="margin-bottom:14px;">Let's connect.</h2>
+      <p class="lead">Always open to a conversation &mdash; find me around the web.</p>
       <div class="socials">
-        <!-- 👇 CHANGE these links to your real profiles -->
+        <!-- 👇 CHANGE: your real profile links -->
         <a href="https://github.com/husainn-7" target="_blank" rel="noopener">GitHub</a>
         <a href="mailto:hussainnn0007@gmail.com">Email</a>
         <a href="https://www.linkedin.com/in/husainn7" target="_blank" rel="noopener">LinkedIn</a>
@@ -268,27 +260,24 @@
     </section>
 
     <footer>
-      <!-- 👇 CHANGE: your name and the year -->
-      Built by Hussain Muntaha· 2026 · My First GitHub Project ✨
+      <!-- 👇 CHANGE: your name -->
+      <span class="mono">Hussain Muntaha &mdash; built &amp; shipped, 2026</span>
     </footer>
   </div>
 
   <script>
-    // Soft light follows the cursor (skipped if user prefers reduced motion)
-    const glow = document.getElementById("glow");
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (glow && !reduced) {
-      window.addEventListener("pointermove", (e) => {
-        glow.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-      });
-    }
+    const bar = document.getElementById("progress");
+    const onScroll = () => {
+      const h = document.documentElement;
+      const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+      bar.style.width = pct + "%";
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
 
-    // Fade sections in as they scroll into view
     const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add("in");
-      });
-    }, { threshold: 0.15 });
+      entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add("in"); });
+    }, { threshold: 0.12 });
     document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
   </script>
 </body>
